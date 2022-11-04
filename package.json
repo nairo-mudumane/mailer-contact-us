@@ -1,0 +1,22 @@
+{
+  "name": "mailer-contact-us",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:nairo-mudumane/mailer-contact-us.git",
+  "author": "nairo-mudumane <nairomudumane@outlook.com>",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "scripts": {
+    "dev": "tsx watch ./index.ts",
+    "start": "node index.js",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "tsx": "^3.11.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.1.1",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.9.2"
+  }
+}
