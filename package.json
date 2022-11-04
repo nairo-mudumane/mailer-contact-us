@@ -12,12 +12,14 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
+    "@types/nodemailer": "^6.4.6",
     "tsx": "^3.11.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
     "@fastify/cors": "^8.1.1",
     "dotenv": "^16.0.3",
-    "fastify": "^4.9.2"
+    "fastify": "^4.9.2",
+    "nodemailer": "^6.8.0"
   }
 }
