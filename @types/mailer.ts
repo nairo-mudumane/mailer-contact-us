@@ -4,3 +4,10 @@ export interface MailerOptions {
   subject: string;
   html: string;
 }
+
+export interface ContactUsMailData {
+  subject: string;
+  name: string;
+  email: string;
+  message: string;
+}

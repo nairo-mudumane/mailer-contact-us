@@ -1,6 +1,11 @@
 import Fastify from "fastify";
 import cors from "@fastify/cors";
-// import AppRoutes from "./routes";
+import dotenv from "dotenv";
+import fastifyView from "@fastify/view";
+import ejs from "ejs";
+import { mailerContactUs } from "./controllers";
+
+dotenv.config();
 
 async function appInit() {
   try {
@@ -13,11 +18,15 @@ async function appInit() {
       origin: true,
     });
 
-    server.get("/mailer/contact-us", (request, reply) => {
-      return reply.code(200).send({ ok: true });
+    await server.register(fastifyView, {
+      engine: {
+        ejs,
+      },
     });
 
-    await server.listen({ port: 3333 });
+    server.post("/mailer/contact-us", mailerContactUs);
+
+    await server.listen({ port: parseInt(process.env.PORT!) });
   } catch (error) {
     console.error(error);
     process.exit(1);
