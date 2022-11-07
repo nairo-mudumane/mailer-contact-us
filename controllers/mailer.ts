@@ -1,4 +1,5 @@
-import { FastifyReply, FastifyRequest } from "fastify";
+import Fastify from "fastify";
+import type { FastifyReply, FastifyRequest } from "fastify";
 import type { ContactUsPayload } from "../@types";
 import { checkContactUsFields } from "../resources";
 
@@ -11,5 +12,6 @@ export function mailerContactUs(request: FastifyRequest, replay: FastifyReply) {
     return replay.code(400).send({ message: error.message });
   }
 
-  return replay.send({ ok: true, payload });
+  // return replay.view("/templates/contact-us.ejs", { ...payload });
+  return replay.send({ payload });
 }
